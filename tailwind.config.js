@@ -1,4 +1,5 @@
-export default {
+module.exports = {
+  darkMode: 'class', // enable class-based dark mode
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}"
@@ -6,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary": {
+        primary: {
           '50': '#edf9ff',
           '100': '#d6f0ff',
           '200': '#b5e7ff',
@@ -30,8 +31,7 @@ export default {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-        },
-      },
+        },      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },

@@ -52,7 +52,7 @@ function Home() {
         eth: 1050,
       },
       location: 'Seattle, WA',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',
       roi: '7.5% Annual',
       metrics: {
         totalInvestors: 89,

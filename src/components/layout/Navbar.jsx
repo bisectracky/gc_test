@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
+import DarkModeToggle from '../layout/DarkModeToggle.tsx'; // Adjust the import path as necessary
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,10 +15,10 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-white shadow-sm">
-      <div className="container">
+    <nav className="bg-white dark:bg-secondary-900 shadow-sm transition-colors duration-300">
+      <div className="container mx-auto px-4">
         <div className="flex justify-between h-16">
-          <div className="flex">
+          <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <svg width="30" height="35" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="15" cy="20" r="10" stroke="#0682ff"/>
@@ -28,7 +29,7 @@ function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -36,13 +37,15 @@ function Navbar() {
                 className="text-secondary-600 hover:text-primary-600 px-3 py-2 text-sm font-medium"
               >
                 {item.name}
-              </Link>
+              </Link >
             ))}
             <button
               className="btn"
             >
               Connect
             </button>
+            {/* Dark Mode Toggle */}
+            <DarkModeToggle />
           </div>
 
           {/* Mobile menu button */}
@@ -77,6 +80,10 @@ function Navbar() {
               >
                 Connect
               </button>
+              {/* Dark Mode Toggle in Mobile Menu */}
+              <div className="px-3 py-2">
+                <DarkModeToggle />
+              </div>
             </div>
           </div>
         )}
